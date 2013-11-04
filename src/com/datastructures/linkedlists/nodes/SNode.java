@@ -1,18 +1,20 @@
+
 package com.datastructures.linkedlists.nodes;
 
 public class SNode<T>
 {
     /**
      * Default constructor.
+     * 
      * @param e
      */
     public SNode(T e)
     {
-	element = e;
+        element = e;
     }
-    
+
     private T element;
-    
+
     private SNode<T> next;
 
     /**
@@ -20,7 +22,7 @@ public class SNode<T>
      */
     public SNode<T> getNext()
     {
-	return next;
+        return next;
     }
 
     /**
@@ -28,7 +30,7 @@ public class SNode<T>
      */
     public void setNext(SNode<T> next)
     {
-	this.next = next;
+        this.next = next;
     }
 
     /**
@@ -36,7 +38,7 @@ public class SNode<T>
      */
     public T getElement()
     {
-	return element;
+        return element;
     }
 
     /**
@@ -44,6 +46,6 @@ public class SNode<T>
      */
     public void setElement(T element)
     {
-	this.element = element;
+        this.element = element;
     }
 }

@@ -1,16 +1,17 @@
+
 package com.datastructures.linkedlists.nodes;
 
 public class DNode<T>
 {
     private T element;
-    
+
     private DNode<T> next;
-    
+
     private DNode<T> prev;
-    
+
     public DNode(T elem)
     {
-	element = elem;
+        element = elem;
     }
 
     /**
@@ -18,7 +19,7 @@ public class DNode<T>
      */
     public T getElement()
     {
-	return element;
+        return element;
     }
 
     /**
@@ -26,7 +27,7 @@ public class DNode<T>
      */
     public void setElement(T element)
     {
-	this.element = element;
+        this.element = element;
     }
 
     /**
@@ -34,7 +35,7 @@ public class DNode<T>
      */
     public DNode<T> getNext()
     {
-	return next;
+        return next;
     }
 
     /**
@@ -42,7 +43,7 @@ public class DNode<T>
      */
     public void setNext(DNode<T> next)
     {
-	this.next = next;
+        this.next = next;
     }
 
     /**
@@ -50,7 +51,7 @@ public class DNode<T>
      */
     public DNode<T> getPrev()
     {
-	return prev;
+        return prev;
     }
 
     /**
@@ -58,7 +59,7 @@ public class DNode<T>
      */
     public void setPrev(DNode<T> prev)
     {
-	this.prev = prev;
-    } 
+        this.prev = prev;
+    }
 
 }
