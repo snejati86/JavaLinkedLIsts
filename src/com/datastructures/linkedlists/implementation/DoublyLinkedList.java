@@ -1,12 +1,10 @@
-
 package com.datastructures.linkedlists.implementation;
 
 import com.datastructures.linkedlists.exception.LinkedListEmptyException;
 import com.datastructures.linkedlists.interfaces.IDoublyList;
 import com.datastructures.linkedlists.nodes.DNode;
 
-public class DoublyLinkedList<T> implements IDoublyList<T>
-{
+public class DoublyLinkedList<T> implements IDoublyList<T> {
 
     /**
      * Head DNode.
@@ -24,79 +22,57 @@ public class DoublyLinkedList<T> implements IDoublyList<T>
     private int size;
 
     @Override
-    public DNode<T> getHead() throws LinkedListEmptyException
-    {
-        if (size != 0)
-        {
+    public DNode<T> getHead() throws LinkedListEmptyException {
+        if (size != 0) {
             return head;
-        }
-        else
-        {
+        } else {
             throw new LinkedListEmptyException();
         }
     }
 
     @Override
-    public void removeFirst() throws LinkedListEmptyException
-    {
-        if (size != 0)
-        {
+    public void removeFirst() throws LinkedListEmptyException {
+        if (size != 0) {
 
             DNode<T> newHead = head.getNext();
-            if (newHead == null)
-            {
+            if (newHead == null) {
                 head = tail = null;
-            }
-            else
-            {
+            } else {
                 newHead.setPrev(null);
                 head = newHead;
             }
             size--;
-        }
-        else
-        {
+        } else {
             throw new LinkedListEmptyException();
         }
 
     }
 
     @Override
-    public void removeLast() throws LinkedListEmptyException
-    {
-        if (size != 0)
-        {
+    public void removeLast() throws LinkedListEmptyException {
+        if (size != 0) {
             DNode<T> newTail = tail.getPrev();
-            if (newTail == null)
-            {
+            if (newTail == null) {
                 head = tail = null;
-            }
-            else
-            {
+            } else {
                 newTail.setNext(null);
                 tail = newTail;
             }
             size--;
-        }
-        else
-        {
+        } else {
             throw new LinkedListEmptyException();
         }
 
     }
 
     @Override
-    public void addLast(DNode<T> node)
-    {
-        if (size != 0)
-        {
+    public void addLast(DNode<T> node) {
+        if (size != 0) {
             node.setPrev(tail);
             node.setNext(null);
             tail.setNext(node);
             tail = node;
-        }
-        else
-        {
+        } else {
             tail = head = node;
             node.setNext(null);
             node.setPrev(null);
@@ -105,16 +81,12 @@ public class DoublyLinkedList<T> implements IDoublyList<T>
     }
 
     @Override
-    public void addFirst(DNode<T> node)
-    {
-        if (size != 0)
-        {
+    public void addFirst(DNode<T> node) {
+        if (size != 0) {
             node.setNext(head);
             node.setPrev(null);
             head = node;
-        }
-        else
-        {
+        } else {
             head = tail = node;
             node.setNext(null);
             node.setPrev(null);
@@ -123,26 +95,20 @@ public class DoublyLinkedList<T> implements IDoublyList<T>
     }
 
     @Override
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return size == 0;
     }
 
     @Override
-    public int getSize()
-    {
+    public int getSize() {
         return size;
     }
 
     @Override
-    public DNode<T> getTail() throws LinkedListEmptyException
-    {
-        if (size != 0)
-        {
+    public DNode<T> getTail() throws LinkedListEmptyException {
+        if (size != 0) {
             return tail;
-        }
-        else
-        {
+        } else {
             throw new LinkedListEmptyException();
         }
     }

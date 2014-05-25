@@ -1,4 +1,3 @@
-
 package com.datastructures.linkedlists.implementation;
 
 import com.datastructures.linkedlists.exception.LinkedListEmptyException;
@@ -6,47 +5,38 @@ import com.datastructures.linkedlists.interfaces.ICircularList;
 import com.datastructures.linkedlists.nodes.DNode;
 
 @SuppressWarnings("javadoc")
-public class CircularLinkedList<T> implements ICircularList<T>
-{
+public class CircularLinkedList<T> implements ICircularList<T> {
     private int size;
 
     private DNode<T> cursor;
 
-    public CircularLinkedList(T element)
-    {
+    public CircularLinkedList(T element) {
         cursor = new DNode<T>(element);
         cursor.setNext(null);
         cursor.setPrev(null);
     }
 
     @Override
-    public int getSize()
-    {
+    public int getSize() {
         return size;
     }
 
     @Override
-    public void advance()
-    {
+    public void advance() {
         cursor = cursor.getNext();
     }
 
     @Override
-    public DNode<T> getCursor()
-    {
+    public DNode<T> getCursor() {
         return cursor;
     }
 
     @Override
-    public void add(DNode<T> node)
-    {
-        if (cursor == null)
-        {
+    public void add(DNode<T> node) {
+        if (cursor == null) {
             node.setNext(node);
             cursor = node;
-        }
-        else
-        {
+        } else {
             node.setNext(cursor.getNext());
             cursor.setNext(node);
         }
@@ -54,21 +44,14 @@ public class CircularLinkedList<T> implements ICircularList<T>
     }
 
     @Override
-    public void remove() throws LinkedListEmptyException
-    {
-        if (size == 0)
-        {
+    public void remove() throws LinkedListEmptyException {
+        if (size == 0) {
             throw new LinkedListEmptyException();
-        }
-        else
-        {
+        } else {
             DNode<T> afterCursor = cursor.getNext();
-            if (afterCursor == cursor.getPrev())
-            {
+            if (afterCursor == cursor.getPrev()) {
                 cursor = null;
-            }
-            else
-            {
+            } else {
 
                 cursor.setNext(afterCursor.getNext());
                 afterCursor.setNext(null);
@@ -78,8 +61,7 @@ public class CircularLinkedList<T> implements ICircularList<T>
     }
 
     @Override
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return size == 0;
     }
 

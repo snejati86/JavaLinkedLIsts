@@ -1,8 +1,6 @@
-
 package com.datastructures.linkedlists.exception;
 
-public class LinkedListEmptyException extends Exception
-{
+public class LinkedListEmptyException extends Exception {
 
     /**
      * Serial version UID.
